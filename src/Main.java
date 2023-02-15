@@ -2,6 +2,7 @@ public class Main {
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
     }
 
     public static int[] generateRandomArray() {
@@ -28,15 +29,27 @@ public class Main {
         int[] arr = generateRandomArray();
         int maxSum = -1;
         int minSum = 200001;
-        for (final int current : arr) {
-            if (current > maxSum) {
-                maxSum = current;
+        for (final int elements : arr) {
+            if (elements > maxSum) {
+                maxSum = elements;
             }
-            if (current < minSum) {
-                minSum = current;
+            if (elements < minSum) {
+                minSum = elements;
             }
         }
         System.out.println("Минимальная сумма трат за день составила " + minSum + " рублей. Максимальная сумма трат за " +
                 "день составила " + maxSum + " рублей");
+    }
+
+    public static void task3() {
+        System.out.println("Задача 3");
+        int[] arr = generateRandomArray();
+        int sum = 0;
+        int days = arr.length;
+        for (final int elements : arr) {
+            sum = sum + elements;
+        }
+        double averageVaule = sum / days;
+        System.out.println("Средняя сумма трат за месяц составила" + averageVaule + " рублей");
     }
 }
